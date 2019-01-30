@@ -27,7 +27,7 @@ function setup(){
 function draw(){
     background(87, 165, 198);
     imageMode(CENTER);
-    image(goggles, mouseX, mouseY, goggles.width/1.5, goggles.height/1.5);
+    
     let t = frameCount/60;
     // create a random number of snowflakes each frame
     for (var i = 0; i < random(5); i++) {
@@ -44,19 +44,9 @@ function draw(){
     // loop through snowflakes with a for..of loop
     for (let flake of snowflakes) {
         flake.update(t); // update snowflake position
-        if((flake.posX < mouseX - (goggles.width/3.5))){
-            flake.display(); // draw snowflake
-        }
-        if((flake.posX > mouseX + (goggles.width/3.5))){
-            flake.display();
-        }
-        if((flake.posY<mouseY-(goggles.height/3.5))){
-            flake.display();
-        }
-        if((flake.posY>mouseY+(goggles.height/3.5))){
-            flake.display();
-        }
+        flake.display();
     }
+    image(goggles, mouseX, mouseY, goggles.width/1.5, goggles.height/1.5);
 }
 
 function keyPressed() {
