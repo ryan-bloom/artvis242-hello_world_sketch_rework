@@ -1,9 +1,11 @@
 /*Base functions - setup runs once, draw is continuous*/
+/*
 let tree1;
 let tree2;
 let tree3;
 let tree4; 
 let tree5;
+*/
 let goggles;
 let mountain;
 let trees = [];
@@ -21,7 +23,7 @@ function preload(){
 }
 
 function setup(){
-    createCanvas(800, 800);
+    createCanvas(windowWidth, windowHeight);
 }
 
 function draw(){
@@ -51,7 +53,7 @@ function draw(){
 
 function keyPressed() {
     if(keyCode == LEFT_ARROW) {
-        image(mountain, 400, 400, 800, 800);
+        image(mountain, windowWidth/2, windowHeight/2, windowWidth, windowHeight);
     }
 }
 
